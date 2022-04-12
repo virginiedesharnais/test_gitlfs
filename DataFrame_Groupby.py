@@ -61,9 +61,9 @@ print('\n==================================================================\n')
 
 # Sort data ratings by created field (groupby + lambda function + sorted)
 
-virginie_var = cloneDF(mergeRatings)
-virginie_var = virginie_var.groupby(['movie_id', 'title'])['rating'].agg(
+var_vbd = cloneDF(mergeRatings)
+var_vbd = var_vbd.groupby(['movie_id', 'title'])['rating'].agg(
     COUNT=np.size, myAVG=lambda x: x.sum() / float(x.count())).sort_values('COUNT', ascending=False)
-#print('My info sorted: \n%s' % virginie_var[:15])
+print('My info sorted: \n%s' % var_vbd[:15])
 
 
